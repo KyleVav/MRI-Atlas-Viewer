@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>
+    Demo - MSMRI Research Group
+  </title>
+
+  <link type="text/css" href="src/css/ui/jquery-ui-1.8.10.custom.css" rel="Stylesheet" />
+  <link type="text/css" href="src/css/volume-viewer-demo.css" rel="Stylesheet" />
+</head>
+
+<body>
+
+  <script id="volume-ui-template" type="x-volume-ui-template">
+    <div class="volume-viewer-display"></div>
+    <div class="volume-viewer-controls volume-controls">
+      <div id="slice-series-{{VOLID}}" class="slice-series-div" data-volume-id="{{VOLID}}">
+        <span class="slice-series-button button" data-axis="xspace"><h4>Sagittal</h4></span>
+        <span class="slice-series-button button" data-axis="yspace"><h4>Coronal</h4></span>
+        <span class="slice-series-button button" data-axis="zspace"><h4>Axial</h4></span>
+      </div>
+    </div>
+  </script>
+
+  <div id="loading" style="display: none;">
+	<div style = "width: 300px; height: 300px;">
+		<img src="src/img/brain.svg">
+	</div>
+  </div>
+  
+  <div id="brainbrowser-wrapper" style="display:none">
+    <div id="volume-viewer">
+      <div class="title">
+        <h1>3D T1 Atlas</h1>
+      </div>
+      <div class="title">
+        <h1>Myelin Water Atlas</h1>
+      </div>
+      <div id="brainbrowser"></div>
+    </div>
+    <div class="paragraph">
+      <hr style="border: 0;height: 0; border-top: 1px solid rgba(0, 0, 0, 0.1); border-bottom: 1px solid rgba(255, 255, 255, 0.3);">
+      </hr>
+      <h3>3D T1 Atlas</h3>
+      <h2>A 3D T1 Atlas is a model created by averaging together many 3D T1 scans from different people of different ages. This 3D T1 Atlas was created from 100 healthy volunteers with an average age of 41 years and an age range of 20 years to 78 years. The scans were acquired on a 3.0T Philips MRI scanner and the atlas was created using Advanced Normalization Tools (ANTs) software.</h2>
+
+      <br></br>
+      <h3>Myelin Water Atlas</h3>
+      <h2>A Myelin Water Atlas is a model created by averaging together many myelin water scans from different people of different ages. The Myelin Water Atlas was created from the same 100 healthy volunteers as the 3D T1 Atlas. Like the 3D T1 Atlas, the Myelin Water Atlas was created using Advanced Normalization Tools (ANTs) software. The myelin water atlas provide valuable reference data for myelin in different brain regions and across the adult lifespan.</h2>
+
+      <br></br>
+      <hr style="border: 0;height: 0; border-top: 1px solid rgba(0, 0, 0, 0.1); border-bottom: 1px solid rgba(255, 255, 255, 0.3);">
+      </hr>
+
+      <!-- 3D Model -->
+      <div class="test" id="canvas"></div>
+    </div>
+  </div>
+
+  <script src="src/js/script.min.js"></script>
+
+</body>
